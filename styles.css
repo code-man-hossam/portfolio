@@ -1,0 +1,221 @@
+.preloader {
+  position: fixed;
+  width: 100%;
+  height: 100vh;
+  top: 0;
+  background-color: #000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 99;
+}
+.preloader.hide {
+  display: none;
+}
+
+.preloader-wrapper {
+  width: 50%;
+  height: 70%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  animation: go 0.3s ease-out;
+  animation-delay: 1s;
+}
+
+@keyframes go {
+  from {
+    transform: scale(1);
+  }
+  to {
+    transform: scale(2);
+  }
+}
+
+.preloader-wrapper img {
+  width: 30%;
+  object-fit: contain;
+}
+
+#checkbox {
+  display: none;
+}
+
+.label {
+  background-color: #111;
+  width: 45px;
+  height: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 3px;
+  border-radius: 20px;
+  cursor: pointer;
+  box-shadow: 0 0 2px 2px rgba(255, 255, 255, 0.5);
+  position: relative;
+  transition: all 0.7s ease-out;
+}
+
+.label.shadow {
+  box-shadow: 0 0 2px 2px rgba(0, 0, 0, 0.5);
+  background-color: #fff;
+}
+
+.ball {
+  background-color: #fff;
+  position: absolute;
+  width: 25px;
+  height: 25px;
+  border-radius: 50%;
+  left: -1px;
+  transition: 0.7s;
+}
+.ball.dark {
+  background-color: #003;
+}
+#checkbox:checked + .label .ball {
+  transform: translateX(22px);
+}
+.fa-moon,
+.fa-sun {
+  transition: all 0.7s ease-out;
+  color: greenyellow;
+}
+.fa-moon.dark,
+.fa-sun.dark {
+  color: #003;
+}
+
+@media only screen and (max-width: 760px) {
+  .label {
+    width: 35px;
+    height: 15px;
+    padding: 3px;
+  }
+  .ball {
+    width: 20px;
+    height: 20px;
+  }
+
+  #checkbox:checked + .label .ball {
+    transform: translateX(17px);
+  }
+  .fa-moon,
+  .fa-sun {
+    font-size: 10px;
+  }
+  .preloader-wrapper img {
+    width: 100%;
+    object-fit: contain;
+  }
+}
+
+/* SOCIALS */
+.socials-container {
+  position: fixed;
+  bottom: 3rem;
+  left: 3rem;
+  width: 3rem;
+  height: 14rem;
+  z-index: 15;
+}
+
+.socials-container .user-btn {
+  position: absolute;
+  bottom: 0;
+  width: 3rem;
+  height: 3rem;
+  border-radius: 50%;
+  background-color: #003;
+  border: 1px solid rgb(194, 8, 8);
+  color: #d15d3a;
+  font-size: 1.5rem;
+  outline: none;
+  cursor: pointer;
+  z-index: 7;
+}
+
+.social-btns {
+  position: absolute;
+  transform: translateY(0rem);
+  width: 100%;
+  height: 78%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+  transition: 0.5s ease-out;
+}
+
+.social-btns button {
+  width: 2rem;
+  height: 2rem;
+  border-radius: 50%;
+  background-color: #003;
+  border: 1px solid rgb(194, 8, 8);
+  color: #d15d3a;
+  font-size: 1.2rem;
+  outline: none;
+  cursor: pointer;
+  transition: 0.5s ease-out;
+}
+
+.btn1 {
+  position: absolute;
+  transform: translateY(7rem);
+  z-index: -3;
+}
+
+.btn1.show {
+  transform: translateY(-3rem) rotate(720deg);
+  z-index: 7;
+}
+
+.btn2 {
+  position: absolute;
+  transform: translateY(7rem);
+  z-index: -3;
+}
+
+.btn2.show {
+  transform: translateY(-0.7rem) rotate(720deg);
+  z-index: 7;
+}
+
+.btn3 {
+  position: absolute;
+  transform: translateY(7rem);
+  z-index: -3;
+}
+
+.btn3.show {
+  transform: translateY(1.7rem) rotate(720deg);
+  z-index: 7;
+}
+
+.btn4 {
+  position: absolute;
+  transform: translateY(7rem);
+  z-index: -3;
+}
+
+.btn4.show {
+  transform: translateY(4rem) rotate(720deg);
+  z-index: 7;
+}
+
+.social-btns button a {
+  text-decoration: none;
+  color: #d15d3a;
+}
+
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(transparent, #d15d3a);
+  border-radius: 5px;
+  box-shadow: rgba(200, 0, 0, 0.3);
+}
